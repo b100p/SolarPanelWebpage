@@ -68,11 +68,10 @@
         <asp:Button class="mybtn w3-btn w3-blue-grey" ID="btnlogin" runat="server" Text="login" Width="90px" OnClick="btnlogin_Click" />
             </div>
     </div>
+    <center>
+            <a href="Request.aspx">Request access</a>
 
-    <div class="row">
-        <div class="col-md-4">
-            <center><a href="Request.aspx">Request access</a></center>
-        </div>
-    </div>
+    </center>
+
 
 </asp:Content>

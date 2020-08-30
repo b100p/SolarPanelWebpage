@@ -97,7 +97,7 @@ namespace ProjectPage
             cn = serv.Con();
             if (cn.State != ConnectionState.Open)
                 cn.Open();
-            MySqlCommand cmd = new MySqlCommand("UPDATE users SET email = '"+TextBox2.Text+"'  ,usersname ='"+TextBox4.Text+"',password='"+TextBox3.Text+"',admin='"+CheckBox1.Checked+"' WHERE idusers = "+TextBox1.Text+";", cn);
+            MySqlCommand cmd = new MySqlCommand("UPDATE users SET email = '"+TextBox2.Text+"'  ,usersname ='"+TextBox4.Text+"',password='"+en.Encrypts(TextBox3.Text)+"',admin='"+CheckBox1.Checked+"' WHERE idusers = "+TextBox1.Text+";", cn);
             cmd.ExecuteNonQuery();
             cmd = new MySqlCommand("SELECT * FROM users;", cn);
             DropDownList1.DataSource = cmd.ExecuteReader();
