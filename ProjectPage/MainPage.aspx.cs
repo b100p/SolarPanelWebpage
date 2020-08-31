@@ -150,9 +150,8 @@ namespace ProjectPage
             double i = 0;
             int j = 0;
             double avg = 1;
-            string[] x = new string[10];
-            double[] y = new double[10];
-            bool once = false;
+            string[] x = new string[200];
+            double[] y = new double[200];
             while (res.Read())
             {
                 date = DateTime.Parse(res[0].ToString());
@@ -160,30 +159,6 @@ namespace ProjectPage
                 if (getSeason(date) == DropDownList3.SelectedValue)
                 {
                     i++;
-
-                    if (!once)
-                    {
-                        if (DropDownList3.SelectedValue == "Winter")
-                        {
-                            x = new string[200];
-                            y = new double[200];
-                        }else if (DropDownList3.SelectedValue == "Autumn")
-                        {
-                            x = new string[100];
-                            y = new double[100];
-                        }
-                        else if (DropDownList3.SelectedValue == "Autumn")
-                        {
-                            x = new string[100];
-                            y = new double[100];
-                        }
-                        else if (DropDownList3.SelectedValue == "Summer")
-                        {
-                            x = new string[100];
-                            y = new double[100];
-                        }
-                            once = true;
-                    }
                     if (date.Day == temp.Day)
                     {
                         avg += power;
@@ -199,8 +174,6 @@ namespace ProjectPage
                         temp = temp.AddDays(1);
                     }
                 }
-                Chart1.ChartAreas[0].AxisX.Interval = 1;
-                Chart1.ChartAreas[0].AxisY.Interval = 1;
                 Chart1.Series[0].Points.DataBindXY(x, y);
                 Chart1.Series[0].ChartType = SeriesChartType.Line;
             }

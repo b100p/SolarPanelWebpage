@@ -122,20 +122,20 @@ namespace ProjectPage
             clear();
             cn.Close();
         }
+
         public void clear()
         {
-            for (int index = 0; index < Page.Form.Controls.Count; index++)
-            {
-                switch (Page.Form.Controls[index].GetType().ToString())
-                {
-                    case "TextBox":
-                        (Page.Form.Controls[index] as TextBox).Text = "";
-                        break;
-                    case "CheckBox":
-                        (Page.Form.Controls[index] as CheckBox).Checked = false;
-                        break;
-                }
-            }
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            CheckBox1.Checked = false;
+
+        }
+
+        protected void reset_Click(object sender, EventArgs e)
+        {
+            clear();
         }
     }
 }

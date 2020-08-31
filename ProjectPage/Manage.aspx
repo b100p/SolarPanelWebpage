@@ -43,10 +43,10 @@
              </tr>
          </table>
                   <div class="Center">
-         <asp:Button ID="btnadd"  runat="server" OnClick="btnadd_Click" Text="New" />
-         <asp:Button ID="btnedit" runat="server" Text="Edit" Visible="False" OnClick="btnedit_Click" />
-         <asp:Button ID="btndelete" runat="server" Text="Delete" Visible="False" OnClick="btndelete_Click" />
-         <input id="Reset1" type="reset" value="reset" />
+                      <asp:Button ID="btnadd"  runat="server" OnClick="btnadd_Click" Text="New" />
+                      <asp:Button ID="btnedit" runat="server" Text="Edit" Visible="False" OnClick="btnedit_Click" />
+                      <asp:Button ID="btndelete" runat="server" Text="Delete" Visible="False" OnClick="btndelete_Click" />
+                      <asp:Button ID="reset" runat="server" Text="Reset" OnClick="reset_Click" />
 
                   </div>
          </div>
